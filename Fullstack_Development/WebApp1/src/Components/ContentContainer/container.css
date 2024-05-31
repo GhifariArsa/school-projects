@@ -1,0 +1,18 @@
+.main-container{
+    background-color: #000;
+}
+.movie-card-image {
+    /* width: 200px; */
+    height: 300px;
+}
+
+.col-movies{
+    /* display: flex*/
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgb(158, 103, 103); */
+    margin: 1rem;
+    margin-bottom: 2rem;
+    /* width: 250px;
+    min-width: 250px; */
+}

@@ -1,0 +1,8 @@
+.link{
+    color:white !important;
+    &:visited{ color:white !important;}
+  }
+
+.link a:visited {
+    color:white !important;
+}

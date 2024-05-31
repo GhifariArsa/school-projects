@@ -1,0 +1,18 @@
+.custom-popover {
+
+    text-align: center;
+    /* Add vertical scrollbar if content exceeds max-height */
+}
+
+.email-text{
+    color: rgb(111, 114, 119);
+}
+
+.profile-pic{
+    width: 120px; 
+    height: 120px;
+}
+
+.update-modal{
+    align-items: center;
+}

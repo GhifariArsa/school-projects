@@ -1,0 +1,14 @@
+// change the theme
+$theme-colors: (
+  "primary": #E50914,
+  "dark": #333333,
+  "darker": #000,
+);
+
+input {
+  border-color: transparent;
+  border-bottom: 2px solid white;
+}
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';

@@ -1,0 +1,16 @@
+.link{
+    color:white !important;
+    &:visited{ color:white !important;}
+  }
+
+
+.r-link{
+    color:white !important;
+    &:visited{ color:white !important;}
+    margin-left: 20px;
+    margin-right: 20%;
+  }
+
+.link a:visited {
+    color:white !important;
+}

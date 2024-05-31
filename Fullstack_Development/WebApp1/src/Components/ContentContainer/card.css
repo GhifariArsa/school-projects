@@ -1,0 +1,17 @@
+.custom-card-body {
+    font-weight: 400;
+    cursor: pointer;
+
+}
+
+.rating{
+    border: 1px solid;
+    text-align: center;
+    display: inline-block;
+    width: 30px;
+    border-radius: 6px;
+}
+
+.two-line-h6 {
+    min-height: 2em;
+}
