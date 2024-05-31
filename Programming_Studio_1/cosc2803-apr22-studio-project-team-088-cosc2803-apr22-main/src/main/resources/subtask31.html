@@ -1,0 +1,259 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <script>
+        function exclamationMark() {
+        var state = document.getElementById("state_drop")
+        if (state.value != "") {
+            document.getElementById("state_drop_exclamation").style.visibility = "hidden";
+        }
+
+        var lga = document.getElementById("sex_drop")
+        if (lga.value != "") {
+            document.getElementById("sex_drop_exclamation").style.visibility = "hidden";
+        }
+
+        var status = document.getElementById("metric_drop")
+        if (status.value != "") {
+            document.getElementById("metric_drop_exclamation").style.visibility = "hidden";
+        }
+
+        var year = document.getElementById("order_drop")
+        if (year.value != "") {
+            document.getElementById("order_drop_exclamation").style.visibility = "hidden";
+        }
+    }
+    </script>
+
+<head>
+    <title>Subtask 3.1</title>
+    <link rel='stylesheet' type='text/css' href='common.css' />
+    <link rel='stylesheet' type='text/css' href='subtask31.css' />
+</head>
+
+<body>
+    <div class='header'>
+        <h1>
+            <a href='http://localhost:7001'>
+                <img src='FinalLogo.png' class='top-image' alt='logo' height='150'>
+            </a>
+        </h1>
+    </div>
+    <div class='topnav'>
+        <a href='/'><img src='home.png' height='14'>&ensp;Home</a>
+        <a href='mission.html'>Our Mission</a>
+        <div class="topnav-right">
+            <a href='page6.html'>Change in Homelessness Over Time</a>
+            <a href='page5.html'>Comparing Homelessness to Other Factors</a>
+            <a href='page4.html'>Focused View on LGA</a>
+            <a href='page3.html'>Relative Proportion of Homelessness by LGAs</a>
+        </div>
+    </div>
+    <div class='subtaskheader'>
+        <h1 class='subpageheading'><span>Comparing Homelessness to <br> Other Factors</span></h1>
+    </div>
+    <br>
+    <br>
+    <div class="content">
+        <div style="float:left; margin-bottom: 1%;" class="card-select">
+            <form action="/page5.html" method="post">
+                <select id='state_drop' name='state_drop' class="select-box" style="width: 46%; margin-bottom: 0px;" onchange="exclamationMark()">
+                    <option value="" disabled selected>Select State</option>
+                    <option th:each="states : ${state}" th:text="${states}" th:value="${states}">state</option>
+                </select>
+                <label id="state_drop_exclamation" for="state_drop" class="exclamation">!</label>
+                <select id="sex_drop" name="sex_drop" class="select-box" style="width: 40%; margin-bottom: 0px;" onchange="exclamationMark()">
+                    <option value="" disabled selected>Select Sex</option>
+                    <option th:each="sex : ${sex}" th:text="${sex}" th:value="${sex}">state</option>
+                </select>
+                <label id="sex_drop_exclamation" for="sex_drop" class="exclamation">!</label>
+        </div>
+
+        <div style="float:left; clear:left; margin-top: 0px;" class="card-select">
+            <div class="select-box" style="margin-left: 0px;">
+            <select id="metric_drop" name="metric_drop" class="select-box"
+                style="margin-top: 0px; margin-bottom: 0px; width: 46%;" onchange="exclamationMark()">
+                <option value="" disabled selected>Select Metric to Order By</option>
+                <option th:each="metric : ${metric}" th:text="${metric}" th:value="${metric}">state</option>
+            </select>
+            <label id="metric_drop_exclamation" for="metric_drop" class="exclamation">!</label>
+            <select id="order_drop" name="order_drop" class="select-box"
+                style="margin-top: 0px; margin-bottom: 0px; width: 40%;" onchange="exclamationMark()">
+                <option value="" disabled selected>Select Order By</option>
+                <option th:each="order : ${order}" th:text="${order}" th:value="${order}">state</option>
+            </select>
+            <label id="order_drop_exclamation" for="order_drop" class="exclamation">!</label>
+        </div>
+        </div>
+        
+
+        <div style="float:left; clear:left; margin-top: 10px; margin-bottom: 2%;" class="card-select">
+            <h3 style="padding-top: 0px; padding-left: 10px; padding-bottom:0px; color: #49423a;">Select Range:</h3>
+            <div class="range-div">
+                <label for="age_range_check" class="select-box;">
+                    <input type="checkbox" id="age_range_check" name="age_range_check" value="yes"> Age Range
+                    <div id="age_range_input" style="display: none">
+                        <div style="text-align:center; padding-top: 10px;">
+                            <label for="age_range1"> From:
+                                <input type="text" id="age_range1" name="age_range1" style="clear:left;">
+                            </label>
+                        </div>
+                        <div style="text-align:center; padding-top: 5px; padding-left: 20px;">
+                            <label for="age_range2"> To:
+                                <input type="text" id="age_range2" name="age_range2" style="clear:left;">
+                            </label>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="range-div">
+                <label for="mortgage_range_check" class="select-box;">
+                    <input type="checkbox" id="mortgage_range_check" name="mortgage_range_check" value="yes">
+                    Mortgage
+                    Range
+                    <div id="mortgage_range_input" style="display: none">
+                        <div style="text-align:center; padding-top: 10px;">
+                            <label for="mortgage_range1"> From:
+                                <input type="text" id="mortgage_range1" name="mortgage_range1" style="clear:left;">
+                            </label>
+                        </div>
+                        <div style="text-align:center; padding-top: 5px; padding-left: 20px;">
+                            <label for="mortgage_range2"> To:
+                                <input type="text" id="mortgage_range2" name="mortgage_range2" style="clear:left;">
+                            </label>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="range-div">
+                <label for="rent_range_check" class="select-box;">
+                    <input type="checkbox" id="rent_range_check" name="rent_range_check" value="yes"> Rent Range
+                    <div id="rent_range_input" style="display: none">
+                        <div style="text-align:center; padding-top: 10px;">
+                            <label for="rent_range1"> From:
+                                <input type="text" id="rent_range1" name="rent_range1" style="clear:left;">
+                            </label>
+                        </div>
+                        <div style="text-align:center; padding-top: 5px; padding-left: 20px;">
+                            <label for="rent_range2"> To:
+                                <input type="text" id="rent_range2" name="rent_range2" style="clear:left;">
+                            </label>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="range-div">
+                <label for="income_range_check" class="select-box;">
+                    <input type="checkbox" id="income_range_check" name="income_range_check" value="yes"> Income
+                    Range
+                    <div id="income_range_input" style="display: none">
+                        <div style="text-align:center; padding-top: 10px;">
+                            <label for="income_range1"> From:
+                                <input type="text" id="income_range1" name="income_range1" style="clear:left;">
+                            </label>
+                        </div>
+                        <div style="text-align:center; padding-top: 5px; padding-left: 20px;">
+                            <label for="income_range2"> To:
+                                <input type="text" id="income_range2" name="income_range2" style="clear:left;">
+                            </label>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <button type='submit' class='btn btn-primary select-box'>Submit</button>
+        </div>
+        </form>
+        <div class='card-result-text' style="margin-top: 0px;">
+            <h2 style="color: #49423a;">Showing Results For</h2>
+            <h4 th:text="${show_state}"></h4>
+            <h4 th:text="${show_sex}"></h4>
+            <h4 th:text="${show_metric}"></h4>
+            <h4 th:text="${show_order}"></h4>
+            <br id="line_break"
+                th:if="${show_age != null || show_mortgage != null || show_rent != null || show_income != null}">
+            <h4 th:text="${show_age}"></h4>
+            <h4 th:text="${show_mortgage}"></h4>
+            <h4 th:text="${show_rent}"></h4>
+            <h4 th:text="${show_income}"></h4>
+        </div>
+
+        <div class="table-div">
+            <table id="result_table" class="table-result left" style="width: 98%;">
+                <tr>
+                    <th>LGA Name</th>
+                    <th>Homeless per 1000 People</th>
+                    <th>Median Age</th>
+                    <th>Median Mortgage</th>
+                    <th>Median Weekly Rent</th>
+                    <th>Median Weekly Income</th>
+                </tr>
+                <tr th:each="results : ${result}">
+                    <td th:text="${results.lgaName}"></td>
+                    <td th:text="${results.totalRatio}"></td>
+                    <td th:text="${results.medianAge}"></td>
+                    <td th:text="${results.medianMortgage}"></td>
+                    <td th:text="${results.medianRent}"></td>
+                    <td th:text="${results.medianIncome}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div class='footer'>
+        <div class=footercont>
+            <img src='footerlogo.png' height= 75px>
+            <p class=footertext> Made with &hearts; by Afif & Arsa. </p>
+            <p class=footertext> Copyright &copy; 2022 Homeless Lives Matter, All Rights Reserved.</p>
+            <p class=footertext> Powered by Javalin. </p>
+        </div>
+    </div>
+</body>
+
+<script>
+    const checkbox = document.getElementById('age_range_check');
+    const checkbox2 = document.getElementById('mortgage_range_check');
+    const checkbox3 = document.getElementById('rent_range_check');
+    const checkbox4 = document.getElementById('income_range_check');
+
+    const box = document.getElementById('age_range_input');
+    const box2 = document.getElementById('mortgage_range_input');
+    const box3 = document.getElementById('rent_range_input');
+    const box4 = document.getElementById('income_range_input');
+
+
+    checkbox.addEventListener('click', function handleClick() {
+        if (checkbox.checked) {
+            box.style.display = 'block';
+        } else {
+            box.style.display = 'none';
+        }
+    });
+
+    checkbox2.addEventListener('click', function handleClick() {
+        if (checkbox2.checked) {
+            box2.style.display = 'block';
+        } else {
+            box2.style.display = 'none';
+        }
+    });
+
+    checkbox3.addEventListener('click', function handleClick() {
+        if (checkbox3.checked) {
+            box3.style.display = 'block';
+        } else {
+            box3.style.display = 'none';
+        }
+    });
+
+    checkbox4.addEventListener('click', function handleClick() {
+        if (checkbox4.checked) {
+            box4.style.display = 'block';
+        } else {
+            box4.style.display = 'none';
+        }
+    });
+</script>
+
+</html>

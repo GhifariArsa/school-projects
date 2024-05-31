@@ -1,0 +1,273 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<script th:inline="javascript">
+    function createLGA() {
+        var lga = [[${ lgas }]];
+        var i = 0;
+        var stop = 5;
+        let list = document.getElementById('lga_drop')
+
+        while (list.hasChildNodes()) {
+            list.removeChild(list.firstChild);
+        }
+
+        document.getElementById("lga_drop").innerHTML += "<option value='' disabled selected>Select LGA</option>";
+
+        for (i = 0; i < [[${ #lists.size(lgas) }]]; i++) {
+            var str = lga[i];
+            var res = str.replace(/\D/g, "");
+            switch (document.getElementById('state_drop').value) {
+                case "NSW":
+                    if (res >= 10000 && res < 20000) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '" value="' + str + '">' + str + '</option>';
+                        console.log(res);
+                        break;
+                    } else {
+                        break;
+                    }
+                case "Victoria":
+                    if (res >= 20000 && res < 30000) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '" value="' + str + '">' + str + '</option>';
+                        console.log(res);
+                        break;
+                    } else {
+                        break;
+                    }
+                case "Queensland":
+                    if (res >= 30000 && res < 40000) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '" value="' + str + '">' + str + '</option>';
+                        break;
+                    } else {
+                        break;
+                    }
+                case "South Australia":
+                    if (res >= 40000 && res < 50000) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '" value="' + str + '">' + str + '</option>';
+                        console.log(res);
+                        break;
+                    } else {
+                        break;
+                    }
+                case "Western Australia":
+                    if (res >= 50000 && res < 60000) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '">' + str + '</option>';
+                        console.log(res);
+                        break;
+                    } else {
+                        break;
+                    }
+                case "Tasmania":
+                    if (res >= 60000 && res < 70000) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '">' + str + '</option>';
+                        console.log(res);
+                        break;
+                    } else {
+                        break;
+                    }
+                case "Northern Territory":
+                    if (res >= 70000 && res < 80000) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '">' + str + '</option>';
+                        console.log(res);
+                        break;
+                    } else {
+                        break;
+                    }
+                case "ACT":
+                    if (res >= 80000 && res < 90000) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '">' + str + '</option>';
+                        console.log(res);
+                        break;
+                    } else {
+                        break;
+                    }
+                case "Other":
+                    if (res >= 90000) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '">' + str + '</option>';
+                        console.log(res);
+                        break;
+                    } else {
+                        break;
+                    }
+                default:
+                    if (res >= 0) {
+                        var opt = document.createElement("option");
+                        document.getElementById("lga_drop").innerHTML += '<option id="' + i + '">' + str + '</option>';
+                        console.log(res);
+                        break;
+                    } else {
+                        break;
+                    }
+            }
+
+        }
+    }
+
+    function exclamationMark() {
+        var state = document.getElementById("state_drop")
+        if (state.value != "") {
+            document.getElementById("state_drop_exclamation").style.display = "none";
+        }
+
+        var lga = document.getElementById("lga_drop")
+        if (lga.value != "") {
+            document.getElementById("lga_drop_exclamation").style.display = "none";
+        }
+
+        var status = document.getElementById("status_drop")
+        if (status.value != "") {
+            document.getElementById("status_drop_exclamation").style.display = "none";
+        }
+
+        var year = document.getElementById("year_drop")
+        if (year.value != "") {
+            document.getElementById("year_drop_exclamation").style.display = "none";
+        }
+
+        var prop = document.getElementById("prop_drop")
+        if (prop.value != "") {
+            document.getElementById("prop_drop_exclamation").style.display = "none";
+        }
+
+    }
+</script>
+
+<head>
+    <title>Subtask 2.2</title>
+    <link rel='stylesheet' type='text/css' href='common.css' />
+    <link rel='stylesheet' type='text/css' href='subtask22.css' />
+</head>
+
+<body>
+    <div class='header'>
+        <h1>
+            <a href='http://localhost:7001'>
+                <img src='FinalLogo.png' class='top-image' alt='logo' height='150'>
+            </a>
+            
+        </h1>
+    </div>
+    <div class='topnav'>
+        <a href='/'><img src='home.png' height='14'>&ensp;Home</a>
+        <a href='mission.html'>Our Mission</a>
+        <div class="topnav-right">
+            <a href='page6.html'>Change in Homelessness Over Time</a>
+            <a href='page5.html'>Comparing Homelessness to Other Factors</a>
+            <a href='page4.html'>Focused View on LGA</a>
+            <a href='page3.html'>Relative Proportion of Homelessness by LGAs</a>
+        </div>
+    </div>
+    <div class='subpageheader'>
+        <h1 class='subpageheading'><span>Focused View on LGA</span></h1>
+    </div>
+    <br>
+    <br>
+    <div class="content">
+        <div style="float:left" class="card-select">
+            <div class="container">
+                <form action="/page4.html" method="post">
+                    <select id='state_drop' name='state_drop' onchange="createLGA(); exclamationMark()">
+                        <option value="" disabled selected>Select State</option>
+                        <option th:each="states : ${state}" th:text="${states}" th:value="${states}">state</option>
+                    </select>
+                    <label id="state_drop_exclamation" for="state_drop" class="exclamation">!</label>
+                    <div class="select-box" style="margin-left: 0px;" id="lga-select">
+                        <select id='lga_drop' name='lga_drop' onchange="exclamationMark()">
+                            <option value="" disabled selected>Select LGA</option>
+                        </select>
+                        <label id="lga_drop_exclamation" for="lga_drop" class="exclamation">!</label>
+                    </div>
+                    <div class="select-box" style="margin-left: 0px;">
+                        <select id='status_drop' name='status_drop' onchange="exclamationMark()">
+                            <option value="" disabled selected>Select Status</option>
+                            <option th:each="statuses : ${status}" th:text="${statuses}" th:value="${statuses}">status
+                            </option>
+                        </select>
+                        <label id="status_drop_exclamation" for="status_drop" class="exclamation">!</label>
+                    </div>
+                    <div class="select-box" style="margin-left: 0px;">
+                        <select id='year_drop' name='year_drop' onchange="exclamationMark()">
+                            <option value="" disabled selected>Select Year</option>
+                            <option th:each="years : ${year}" th:text="${years}" th:value="${years}">year</option>
+                        </select>
+                        <label id="year_drop_exclamation" for="year_drop" class="exclamation">!</label>
+                    </div>
+                    <div class="select-box" style="margin-left: 0px;">
+                        <select id='prop_drop' name='prop_drop' onchange="exclamationMark()">
+                            <option value="" disabled selected>Select Proportion</option>
+                            <option th:each="props : ${prop}" th:text="${props}" th:value="${props}">proportion</option>
+                        </select>
+                        <label id="prop_drop_exclamation" for="prop_drop" class="exclamation">!</label>
+                    </div>
+                    <button type='submit' class='btn btn-primary select-box'
+                        style="margin-left: 0px; margin-top: 0px; margin-bottom:0px;">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class='card-result-text'>
+            <h2 style="color: #49423a;">Showing Results For</h2>
+            <h4 th:text="${show_LGA}"></h4>
+            <h4 th:text="${show_status}"></h4>
+            <h4 th:text="${show_year}"></h4>
+            <h4 th:text="${show_prop}"></h4>
+        </div>
+        <div class="table-result left">
+            <div>
+                <table id="result_table" class="table-result left" style="width: 98%;">
+                    <tr>
+                        <th>LGA Name</th>
+                        <th>State</th>
+                        <th>Type</th>
+                        <th>Area</th>
+                        <th>Population</th>
+                    </tr>
+                    <tr th:each="results : ${result}">
+                        <td th:text="${results.lgaName}"></td>
+                        <td th:text="${results.state}"></td>
+                        <td th:text="${results.lgaType}"></td>
+                        <td th:text="${results.area} + ' sqkm'"></td>
+                        <td th:text="${results.population}"></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div class="">
+                <table id="result_table" class="table-result left" style="width: 98%;">
+                    <tr>
+                        <th>Sex</th>
+                        <th>Age Range</th>
+                        <th>Population</th>
+                        <th>Proportion</th>
+                    </tr>
+                    <tr th:each="resultsTable : ${resultTable2}">
+                        <td th:text="${resultsTable.sex}"></td>
+                        <td th:text="${resultsTable.ageRange}"></td>
+                        <td th:text="${resultsTable.count}"></td>
+                        <td th:text="${resultsTable.proportion} + '%'"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    </div>
+</body>
+<div class='footer'>
+    <div class=footercont>
+        <img src='footerlogo.png' height= 75px>
+        <p class=footertext> Made with &hearts; by Afif & Arsa. </p>
+        <p class=footertext> Copyright &copy; 2022 Homeless Lives Matter, All Rights Reserved.</p>
+        <p class=footertext> Powered by Javalin. </p>
+    </div>
+</div>
+
+</html>

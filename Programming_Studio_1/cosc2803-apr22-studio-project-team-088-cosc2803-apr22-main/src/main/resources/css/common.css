@@ -1,0 +1,190 @@
+/* External CSS style file */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial;
+   padding: 0px;
+   margin: 0px;
+   background: #f1f1f1;
+}
+
+/* Header (div) formatting */
+.header {
+   padding: 10px;
+   text-align: center;
+   background-color: #efe6dc;
+   color: #000000;
+}
+
+.header h1 {
+   font-size: 50px;
+}
+
+
+/* Make the logo have a rounded edge */
+img.top-image {
+   vertical-align: middle;
+}
+
+/* CSS Layout from W3Schools: https://www.w3schools.com/css/css_templates.asp */
+/* Style the top navigation bar */
+.topnav {
+   overflow: hidden;
+   background-color: #6A6056;
+}
+
+/* Style the topnav links */
+.topnav a {
+   float: left;
+   display: block;
+   color: #efe6dc;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+   color: #efe6dc;
+   background-color:#49423a;
+}
+
+/* Style the content */
+.content {
+   background-color: #f2f2f2;
+   padding: 0px;
+}
+
+/* Style the footer */
+.footer {
+   background-color: #49423a;
+   padding: 50px;
+   height: 285px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 0px;
+   margin-right: 0px;
+   border-radius: 10px;
+   font-size: 1em;
+   text-align: center;
+   font-weight: bold;
+   clear: both;
+}
+
+.topnav-right a {
+   float: right;
+}
+
+/* Styling the table */
+.table-result {
+   width: 73%;
+   border-collapse: collapse;
+}
+
+.table-result td {
+   border: 1px solid #6A6056;
+   text-align: center;
+   padding: 8px;
+}
+
+
+.table-result tr:nth-child(even) {
+   background-color: #ddd;
+}
+
+.table-result th {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #6A6056;
+   color: #efe6dc;
+   padding-left: 8px;
+   text-align: center;
+   position: sticky;
+   border: 1px solid #6A6056;
+   top: 0px;
+}
+
+.table-result tr.second th {
+   position: sticky;
+  top: 42px;
+  background-color: #6A6056;
+}
+
+.table-result tr:hover {
+   background-color: #efe6dc;
+}
+
+.center {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.left {
+   margin-left: auto;
+}
+
+/* Styling the select */
+
+select {
+   font-size: 13px;
+   padding: 3px 3px;
+}
+
+.select-box {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 10px;
+}
+
+.card-select:hover {
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-result-text:hover {
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.right {
+   margin-right: auto;
+}
+
+.table-div {
+   height: 600px;
+   overflow: auto;
+}
+
+.exclamation {
+   color: red;
+}
+
+h4{
+   color: #49423a;
+}
+
+.subpageheading{
+   font-family: helvetica;
+   text-align: center;
+   color: #49423a;
+   font-size: 60px;
+   letter-spacing: 0px;
+   padding: 0 5px;
+}
+
+.subpageheading span{
+   background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      #efe6dc 50%
+   );
+}
+
+.footertext{
+   font-family: helvetica;
+   color: #efe6dc;
+   size: 10px;
+   font-weight: 500;
+}

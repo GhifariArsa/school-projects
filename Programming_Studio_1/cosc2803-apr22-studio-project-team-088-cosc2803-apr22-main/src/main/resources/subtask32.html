@@ -1,0 +1,160 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<script>
+    function exclamationMark() {
+        var state = document.getElementById("state_drop")
+        if (state.value != "") {
+            document.getElementById("state_drop_exclamation").style.visibility = "hidden";
+        }
+
+        var lga = document.getElementById("sex_drop")
+        if (lga.value != "") {
+            document.getElementById("sex_drop_exclamation").style.visibility = "hidden";
+        }
+
+        var status = document.getElementById("metric_drop")
+        if (status.value != "") {
+            document.getElementById("metric_drop_exclamation").style.visibility = "hidden";
+        }
+
+        var year = document.getElementById("order_drop")
+        if (year.value != "") {
+            document.getElementById("order_drop_exclamation").style.visibility = "hidden";
+        }
+
+        var year = document.getElementById("age_drop")
+        if (year.value != "") {
+            document.getElementById("age_drop_exclamation").style.visibility = "hidden";
+        }
+
+        var year = document.getElementById("change_drop")
+        if (year.value != "") {
+            document.getElementById("change_drop_exclamation").style.visibility = "hidden";
+        }
+    }
+</script>
+
+<head>
+    <title>Subtask 3.2</title>
+    <link rel='stylesheet' type='text/css' href='common.css' />
+    <link rel='stylesheet' type='text/css' href='subtask22.css' />
+</head>
+
+<body>
+    <div class='header'>
+        <h1>
+            <a href='http://localhost:7001'>
+                <img src='FinalLogo.png' class='top-image' alt='logo' height='150'>
+            </a>
+        </h1>
+    </div>
+    <div class='topnav'>
+        <a href='/'><img src='home.png' height='14'>&ensp;Home</a>
+        <a href='mission.html'>Our Mission</a>
+        <div class="topnav-right">
+            <a href='page6.html'>Change in Homelessness Over Time</a>
+            <a href='page5.html'>Comparing Homelessness to Other Factors</a>
+            <a href='page4.html'>Focused View on LGA</a>
+            <a href='page3.html'>Relative Proportion of Homelessness by LGAs</a>
+        </div>
+    </div>
+    <div class='subtaskheader'>
+        <h1 class='subpageheading'><span>Change in Homelessness Over <br> Time</span></h1>
+    </div>
+    <br>
+    <br>
+
+    <div class="content">
+        <div class="card-select" style="float: left; clear: left;">
+            <form action="/page6.html" method="post">
+                <div class="select-box">
+                    <select id='state_drop' name='state_drop' style="width: 46%;" onchange="exclamationMark()">
+                        <option value="" disabled selected>Select State</option>
+                        <option th:each="states : ${state}" th:text="${states}" th:value="${states}">state</option>
+                    </select>
+                    <label id="state_drop_exclamation" for="state_drop" class="exclamation">!</label>
+                    <select id="sex_drop" name="sex_drop" style="width: 40%;" onchange="exclamationMark()">
+                        <option value="" disabled selected>Select Sex</option>
+                        <option th:each="sex : ${sex}" th:text="${sex}" th:value="${sex}">state</option>
+                    </select>
+                    <label id="sex_drop_exclamation" for="state_drop" class="exclamation">!</label>
+                    <select id='age_drop' name='age_drop' style="width: 46%; margin-top: 10px; margin-bottom: 0px;" onchange="exclamationMark()">
+                        <option value="" disabled selected>Select Age</option>
+                        <option th:each="age : ${age}" th:text="${age}" th:value="${age}"></option>
+                    </select>
+                    <label id="age_drop_exclamation" for="state_drop" class="exclamation">!</label>
+                </div>
+        </div>
+        <div class="card-select" style="float: left; clear: left; margin-top: 1.5%;">
+            <div class="select-box">
+                <select id='metric_drop' name='metric_drop' style="width: 46%;" onchange="exclamationMark()">
+                    <option value="" disabled selected>Select Metric</option>
+                    <option th:each="metric : ${metric}" th:text="${metric}" th:value="${metric}">state</option>
+                </select>
+                <label id="metric_drop_exclamation" for="metric_drop" class="exclamation">!</label>
+                <select id="change_drop" name="change_drop" style="width: 40%;" onchange="exclamationMark()">
+                    <option value="" disabled selected>Select Change</option>
+                    <option th:each="change : ${change}" th:text="${change}" th:value="${change}">state</option>
+                </select>
+                <label id="change_drop_exclamation" for="change_drop" class="exclamation">!</label>
+            </div>
+            <select id="order_drop" name="order_drop" class="select-box" style="width: 40%;" onchange="exclamationMark()">
+                <option value="" disabled selected>Select Order By</option>
+                <option th:each="order : ${order}" th:text="${order}" th:value="${order}">state</option>
+            </select>
+            <label id="order_drop_exclamation" for="order_drop" class="exclamation">!</label>
+            <button type='submit' class='btn btn-primary select-box'>Submit</button>
+        </div>
+
+        <div class='card-result-text' style="margin-top: 1.5%;">
+            <h2 style="color: #49423a;">Showing Results For</h2>
+            <h4 th:text="${show_state}"></h4>
+            <h4 th:text="${show_sex}"></h4>
+            <h4 th:text="${show_age}"></h4>
+            <br>
+            <h4 th:text="${show_metric}"></h4>
+            <h4 th:text="${show_change}"></h4>
+            <h4 th:text="${show_order}"></h4>
+        </div>
+
+        <div class="table-div">
+            <table id="result_table" class="table-result left" style="width: 98%;">
+                <tr>
+                    <th>LGA Name</th>
+                    <th colspan="2">Total Change in Homeless Population</th>
+                    <th colspan="2">Total Change in At Risk Population</th>
+                    <th colspan="2">Total Change in LGA Population</th>
+                </tr>
+                <tr class="second">
+                    <th></th>
+                    <th>Raw Value</th>
+                    <th>Percentage</th>
+                    <th>Raw Value</th>
+                    <th>Percentage</th>
+                    <th>Raw Value</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr th:each="result : ${result}">
+                    <td th:text="${result.lgaName}"></td>
+                    <td th:text="${result.changeInHomeless}"></td>
+                    <td th:text="${result.changeInHomelessPercent}"></td>
+                    <td th:text="${result.changeInAtrisk}"></td>
+                    <td th:text="${result.changeInAtRiskPercent}"></td>
+                    <td th:text="${result.totalChangeInPopulation}"></td>
+                    <td th:text="${result.totalChangeInPopulationPercent}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div class='footer'>
+        <div class=footercont>
+            <img src='footerlogo.png' height= 75px>
+            <p class=footertext> Made with &hearts; by Afif & Arsa. </p>
+            <p class=footertext> Copyright &copy; 2022 Homeless Lives Matter, All Rights Reserved.</p>
+            <p class=footertext> Powered by Javalin. </p>
+        </div>
+    </div>
+</body>
+
+</html>

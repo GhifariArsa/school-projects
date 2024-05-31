@@ -1,1 +1,1 @@
-# school-projects
+# RMIT Projects

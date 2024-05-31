@@ -1,0 +1,203 @@
+
+
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+    background: transparent;
+    padding: 0px;
+}
+
+.parallax{
+    background: url('homelessmain.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 700px;
+    filter: brightness(90%);
+}
+
+.DYK{
+    position:absolute;
+    margin-top: 250px;
+    margin-left: 687px;
+    font-family: helvetica;
+    font-weight: 700;
+    text-align: center;
+    color: #efe6dc;
+    font-size: 80px;
+    
+}
+
+.factcont{
+    margin: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.neu{
+    height: 400px;
+    width: 1200px;
+    background: #F2F2F2;
+    border-radius: 25px;
+    box-shadow: -3px -3px 5px #ffffff90, 3px 3px 15px #00000040;
+    padding: 50px;
+    transition: 0.3s;
+}
+
+.neu:hover {
+    box-shadow: 2px 2px 10px #ffffff90, 8px 8px 20px #00000040;
+  }
+
+.facts{
+    font-family: helvetica;
+    color: #49423a;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    
+}
+
+.left{
+    width: 700px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.splitter{
+    width: 100px;
+    float: left;
+}
+
+.right{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.factpic{
+    height: 250px;
+}
+
+.statcont{
+    margin: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.statneu{
+    height: 400px;
+    width: 400px;
+    background: #F2F2F2;
+    border-radius: 25px;
+    box-shadow: -3px -3px 5px #ffffff90, 3px 3px 15px #00000040;
+    padding: 50px;
+    transition: 0.3s;
+}
+
+.statneu:hover {
+    box-shadow: 2px 2px 10px #ffffff90, 8px 8px 20px #00000040;
+  }
+
+.stattop{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: top;
+}
+
+.statsplitter{
+    height: 10px;
+    float: top;
+}
+
+.statbot{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: top;
+}
+
+.statheading{
+    font-family: helvetica;
+    color: #49423a;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
+.LGA{
+    font-family: helvetica;
+    color: #49423a;
+    font-size: 60px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    background-color: #efe6dc;
+}
+
+.Population{
+    font-family: helvetica;
+    color: #49423a;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    background-color: #efe6dc;
+}
+
+.statscont{
+    margin: 75px;
+    display: flex;
+    justify-content: center;
+}
+
+.statsleft{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+.statssplitter{
+    width: 50px;
+    float: right;
+    margin: 15px;
+}
+
+.statsright{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+.ref{
+    font-family: helvetica;
+    color: #b2b2b2;
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0;
+}
