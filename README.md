@@ -52,11 +52,11 @@ This is a full-stack movie application, featuring a catalog of movies, a "coming
 This project, completed in my second year, was a milestone in my coding journey. With more experience under my belt, my teammate and I were able to finish it in a relatively short time. It was my first exposure to React and Express, and once I got the hang of it, I was completely hooked. Since then, React has become my go-to framework for web applications. Looking back at the web app we built using Java and Thymeleaf, my teammate and I often marvel at how we managed to pull it off! This project really ignited my passion for learning more about JavaScript frameworks and their capabilities.
 
 **What I Learned**:
-- Frontend Design
-- API Design
-- Database Design
-- Project Management
-- Javascript Technologies (React, Express, etc.)
+- Frontend design with React
+- API development using Express.js
+- Database design and integration with PostgreSQL
+- Project management and teamwork
+- Expanded knowledge of JavaScript technologies
 
 ---
 
