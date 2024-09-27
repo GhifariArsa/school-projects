@@ -40,6 +40,8 @@ This project, completed during my first year, was my first real exposure to buil
 - API Development
 - Database Design
 
+[Link to Project](https://github.com/GhifariArsa/school-projects/tree/main/Fullstack_Java_Application)
+
 ---
 
 ### 3. **React Movie App**
@@ -57,6 +59,8 @@ This project, completed in my second year, was a milestone in my coding journey.
 - Database design and integration with PostgreSQL
 - Project management and teamwork
 - Expanded knowledge of JavaScript technologies
+
+[Link to Project](https://github.com/GhifariArsa/school-projects/tree/main/React_Movie_App_With_Admin_Dashboard)
 
 ---
 
